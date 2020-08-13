@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import Knex from "../database/connection";
 
 class PointController {
@@ -23,8 +24,8 @@ class PointController {
     return res.json({ point: serializedPoint, items });
   }
 
-  async index(req: any, res: any) {
-    const { city, uf, items } = req.query;
+  async index(request: Request, response: Response) {
+    const { city, uf, items } = request.query;
 
     const parsedItems = String(items)
       .split(",")
@@ -40,12 +41,19 @@ class PointController {
 
     const serializedPoints = points.map((item) => {
       return {
-        ...points,
+        id: item.id,
+        name: item.name,
+        email: item.email,
+        whatsapp: item.whatsapp,
+        latitude: item.latitude,
+        longitude: item.longitude,
+        city: item.city,
+        uf: item.uf,
         image_url: `http://192.168.0.120:3333/uploads/${item.image}`,
       };
     });
 
-    return res.json(serializedPoints);
+    return response.json(serializedPoints);
   }
 
   async store(req: any, res: any) {

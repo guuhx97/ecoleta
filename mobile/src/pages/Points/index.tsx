@@ -76,7 +76,6 @@ const Points: React.FC = () => {
         },
       })
       .then((response) => {
-        console.log(response);
         setPoints(response.data);
       });
   }, [selectedItems]);
@@ -102,7 +101,6 @@ const Points: React.FC = () => {
 
   return (
     <>
-      {console.log(points)}
       <View style={styles.container}>
         <TouchableOpacity onPress={handleNavigateBack}>
           <Icon name="arrow-left" size={20} color="#34cb79" />
@@ -137,7 +135,6 @@ const Points: React.FC = () => {
                   <View style={styles.mapMarkerContainer}>
                     <Image
                       style={styles.mapMarkerImage}
-                      
                       source={{
                         uri: point.image_url,
                       }}
