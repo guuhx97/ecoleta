@@ -22,6 +22,7 @@ O Ecoleta é uma aplicalção que tem como objetivo auxiliar na coleta de materi
 ## 🔨 Tecnologias
 
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript)
+- [Typescript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
@@ -36,6 +37,8 @@ O Ecoleta é uma aplicalção que tem como objetivo auxiliar na coleta de materi
 ### 🔧 Back-end
 
 - Entrar na pasta `backend`;
+- Executar `yarn knex:migrate` para criar as tabelas do banco;
+- Executar `yarn knex:seed` para preencher items no banco;
 - Executar `yarn install` para instalar dependências do projeto;
 - Executar `yarn dev` para que o projeto seja executado;
 
